@@ -505,6 +505,50 @@ h1 {
   line-height: 1.25rem;
 }
 
+.link-mobile-projeto {
+  display: none;
+  background: linear-gradient(
+    90deg,          /* Direção do gradiente */
+    #c39a58,        /* Tom dourado mais escuro */
+    #fff3d5,        /* Tom de brilho claro (quase branco) */
+    #c39a58         /* Repete o tom escuro para um loop suave */
+  );
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  /* Animação suave */
+  animation: brilhoDourado 6s ease-in-out infinite;
+  text-decoration: underline;
+  font-weight: 700;
+
+
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.link-mobile-projeto:hover {
+  text-decoration: underline;
+}
+
+@keyframes brilhoDourado {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .link-gradiente-dourado {
+    animation: none;
+    background-size: 100% 100%;
+  }
+}
+
+
+
+
+
 .info-projetos {
   margin-bottom: 5px;
 }
@@ -883,6 +927,25 @@ body {
     gap: 3rem;
   }
 
+  .projetos-overlay {
+    display: none !important;
+  }
+
+  /* Mostra o link dourado abaixo do parágrafo */
+  .link-mobile-projeto {
+    display: inline-block;
+    margin-top: 1rem;
+    text-decoration: underline;
+  }
+
+  /* Remove o efeito de hover do card */
+  .projetos-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+
+
   .contatos {
     height: 90vh;
   }
@@ -899,11 +962,11 @@ body {
   }
 
   .cabecalho-sub-titulo {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   .cabecalho-sub-js {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
   
   .impact{
