@@ -1,0 +1,933 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+     --primaria: #D4AF37;   /* Dourado Clássico: para títulos, botões e destaques. */
+    --secundaria: #F0E68C;  /* Dourado Claro (Khaki): para hovers e detalhes sutis. */
+    --escuro: #121212;     /* Quase Preto: cor de fundo principal, suave para os olhos. */
+    --maisescuro: #0A0A0A; /* Preto Profundo: para o rodapé ou header, criando contraste. */
+    --claro: #EAEAEA;     /* Branco Suave: cor principal do texto e parágrafos. */
+    --vidro: rgba(255, 255, 255, 0.05);
+}
+
+body{
+    background-color: var(--escuro);
+    color: var(--claro);
+}
+
+.navegacao {
+    top: 0;
+    position: fixed;
+    background-color: rgba(11, 11, 11, 0.8);
+    width: 100%;
+    z-index: 100;
+    padding: 1.5rem;
+}
+
+
+
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 3rem;
+    justify-content: center;
+}
+
+.menu-link {
+    text-decoration: none;
+    color: var(--claro);
+    font-weight: 500;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.menu-link::after{
+    content: '';
+    height: 2px;
+    width: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(90deg, var(--primaria), var(--secundaria));
+    transition: width 0.45s ease;
+
+}
+
+.menu-link:hover::after {
+    width: 100%;
+}
+
+.cabecalho {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.foto-perfil{
+    width: 200px;
+    height: 200px;
+    box-shadow: 0 0 15px 5px rgba(212, 175, 55, 0.2);
+    border-radius: 50%;
+    border: 4px solid var(--vidro);
+    animation: flutuar 5s ease-in-out infinite;
+}
+
+.impact {
+  margin-top: 2rem;
+  font-size: 2rem;
+}
+
+h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin: 20px;
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+   /* 1. O Gradiente Dourado */
+  background: linear-gradient(
+    90deg,          /* Direção do gradiente */
+    #c39a58,        /* Tom dourado mais escuro */
+    #fff3d5,        /* Tom de brilho claro (quase branco) */
+    #c39a58         /* Repete o tom escuro para um loop suave */
+  );
+
+  /* 2. Faz o fundo ser 2x maior que o texto para ter espaço para se mover */
+  background-size: 200% auto;
+
+  /* 3. Recorta o fundo para aparecer apenas onde há texto */
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  /* 4. Deixa a cor do texto transparente para que o fundo apareça */
+  /* Para navegadores mais antigos e WebKit */
+  -webkit-text-fill-color: transparent; 
+  color: transparent; /* Para navegadores modernos */
+
+  /* 5. Aplica a animação */
+  animation: brilho-dourado 3s linear infinite;
+
+  /* Estilos opcionais para deixar o texto mais bonito */
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 3.5rem;
+  text-align: center;
+}
+
+
+.cabecalho-sub-titulo {
+  font-size: 3rem;
+  color: var(--claro);
+
+}
+
+.cabecalho-sub-js{
+  font-size: 2.5rem;
+  margin-top: 10px
+}
+
+.typing-effect{
+  background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+  
+  /* 2. Recorta o fundo para o formato do texto */
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  
+  /* 3. Deixa a cor do texto transparente para que o fundo apareça */
+  color: transparent;
+
+  /* Opcional: Adiciona uma sombra para dar mais profundidade */
+  text-shadow: 2px 2px 3px rgba(0,0,0,0.2);
+}
+
+/* From Uiverse.io by imtausef */ 
+.button {
+  margin-top: 5rem;
+  cursor: pointer;
+  font-size: 1.4rem;
+  border-radius: 16px;
+  border: none;
+  padding: 2px;
+  background: radial-gradient(circle 80px at 80% -10%, #ffffff, #181b1b);
+  position: relative;
+  transition:
+    background 0.3s,
+    transform 0.3s;
+}
+
+.button:hover {
+  /*background: radial-gradient(circle 80px at 80% -10%, #181b1b, #000);*/
+  transform: scale(0.98);
+}
+
+.button::after {
+  content: "";
+  position: absolute;
+  width: 65%;
+  height: 60%;
+  border-radius: 120px;
+  top: 0;
+  right: 0;
+  box-shadow: 0 0 20px #ffffff38;
+  z-index: -1;
+  transition: box-shadow 0.3s;
+}
+
+.button:hover::after {
+  box-shadow: 0 0 10px #ffffff18;
+}
+
+.blob1 {
+  position: absolute;
+  width: 70px;
+  height: 100%;
+  border-radius: 16px;
+  bottom: 0;
+  left: 0;
+  background: radial-gradient(
+    circle 60px at 0% 100%,
+     rgba(212, 175, 55, 0.2),
+    transparent
+  );
+  box-shadow: -10px 10px 30px ;
+  transition:
+    background 0.3s,
+    box-shadow 0.3s;
+}
+
+.button:hover .blob1 {
+  /*  background: radial-gradient(circle 60px at 0% 100%, #181b1b, #000);*/
+  box-shadow: -5px 5px 20px #000;
+}
+
+.inner {
+  padding: 14px 25px;
+  border-radius: 14px;
+  color: #fff;
+  z-index: 3;
+  position: relative;
+  background: radial-gradient(circle 80px at 80% -50%, #777777, #0f1111);
+  transition: background 0.3s;
+  text-decoration: none;
+}
+
+.button:hover .inner {
+  background: radial-gradient(circle 80px at 80% -50%, #333333, #0f0f0f);
+}
+
+.inner::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  border-radius: 14px;
+  background: radial-gradient(
+    circle 60px at 0% 100%,
+     rgba(212, 175, 55, 0.2),
+    transparent
+  );
+  position: absolute;
+  transition: opacity 0.3s;
+}
+
+.button:hover .inner::before {
+  opacity: 0;
+}
+
+.sobre {
+  padding:  6rem 2rem;
+  height: 100vh;
+}
+
+.sobre-titulo{
+  margin-top: 4rem;
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 1.5rem;
+  font-size: 1rem;
+   /* 1. O Gradiente Dourado */
+  background: linear-gradient(
+    90deg,          /* Direção do gradiente */
+    #c39a58,        /* Tom dourado mais escuro */
+    #fff3d5,        /* Tom de brilho claro (quase branco) */
+    #c39a58         /* Repete o tom escuro para um loop suave */
+  );
+
+  /* 2. Faz o fundo ser 2x maior que o texto para ter espaço para se mover */
+  background-size: 200% auto;
+
+  /* 3. Recorta o fundo para aparecer apenas onde há texto */
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  /* 4. Deixa a cor do texto transparente para que o fundo apareça */
+  /* Para navegadores mais antigos e WebKit */
+  -webkit-text-fill-color: transparent; 
+  color: transparent; /* Para navegadores modernos */
+
+  /* 5. Aplica a animação */
+  animation: brilho-dourado 3s linear infinite;
+
+  /* Estilos opcionais para deixar o texto mais bonito */
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 3.5rem;
+  text-align: center;
+}
+
+.sobre-caixa{
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 16px;
+  border: 1px solid var(--vidro);
+  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+
+
+.sobre-paragrafo {
+  font-size: 1.2rem;
+}
+
+.about-skills {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.ability {
+  margin-top: 4rem;
+  font-size: 1rem;
+   /* 1. O Gradiente Dourado */
+  background: linear-gradient(
+    90deg,          /* Direção do gradiente */
+    #c39a58,        /* Tom dourado mais escuro */
+    #fff3d5,        /* Tom de brilho claro (quase branco) */
+    #c39a58         /* Repete o tom escuro para um loop suave */
+  );
+
+  /* 2. Faz o fundo ser 2x maior que o texto para ter espaço para se mover */
+  background-size: 200% auto;
+
+  /* 3. Recorta o fundo para aparecer apenas onde há texto */
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  /* 4. Deixa a cor do texto transparente para que o fundo apareça */
+  /* Para navegadores mais antigos e WebKit */
+  -webkit-text-fill-color: transparent; 
+  color: transparent; /* Para navegadores modernos */
+
+  /* 5. Aplica a animação */
+  animation: brilho-dourado 3s linear infinite;
+
+  /* Estilos opcionais para deixar o texto mais bonito */
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 2rem;
+  text-align: center;
+
+}
+
+@keyframes brilho-dourado {
+  from {
+    /* Começa com a posição do fundo na esquerda */
+    background-position: 200% center;
+  }
+  to {
+    /* Termina com a posição do fundo na direita */
+    background-position: 0% center;
+  }
+}
+
+.skills-icons {
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    
+}
+.skills-icons i {
+    transition: color 0.3s, transform 0.3s;
+    cursor: pointer;
+    background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+  
+  /* 2. Recorta o fundo para o formato do texto */
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  
+  /* 3. Deixa a cor do texto transparente para que o fundo apareça */
+ 
+
+  /* Opcional: Adiciona uma sombra para dar mais profundidade */
+  text-shadow: 2px 2px 3px rgba(0,0,0,0.2);
+   
+}
+.skills-icons i:hover {
+    background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+  
+  /* 2. Recorta o fundo para o formato do texto */
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  
+  /* 3. Deixa a cor do texto transparente para que o fundo apareça */
+  color: transparent;
+
+  /* Opcional: Adiciona uma sombra para dar mais profundidade */
+  text-shadow: 2px 2px 3px rgba(0,0,0,0.2);
+    transform: scale(1.2);
+}
+
+.projetos {
+  padding: 6rem 2rem;
+}
+
+.projetos-titulo {
+  margin-top: 50px;
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  /* 1. O Gradiente Dourado */
+  background: linear-gradient(
+    90deg,          /* Direção do gradiente */
+    #c39a58,        /* Tom dourado mais escuro */
+    #fff3d5,        /* Tom de brilho claro (quase branco) */
+    #c39a58         /* Repete o tom escuro para um loop suave */
+  );
+
+  /* 2. Faz o fundo ser 2x maior que o texto para ter espaço para se mover */
+  background-size: 200% auto;
+
+  /* 3. Recorta o fundo para aparecer apenas onde há texto */
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  /* 4. Deixa a cor do texto transparente para que o fundo apareça */
+  /* Para navegadores mais antigos e WebKit */
+  -webkit-text-fill-color: transparent; 
+  color: transparent; /* Para navegadores modernos */
+
+  /* 5. Aplica a animação */
+  animation: brilho-dourado 3s linear infinite;
+
+  /* Estilos opcionais para deixar o texto mais bonito */
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+
+
+.projetos-caixas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.projetos-card {
+  background: rgba(255,255,255,0.05);
+  border-radius: 16px;
+  backdrop-filter: blur(5px);
+  border: 1px solid var(--vidro);
+  overflow: hidden;
+  position: relative;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.projetos-card:hover {
+   box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+   transform: translateY(-10px) scale(1.03);
+}
+
+.projetos-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo semi-transparente escuro */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Começa invisível */
+    transition: opacity 0.3s ease; /* Transição suave para o efeito */
+    text-decoration: none; /* Remove sublinhado do link */
+    font-size: 1.5em; /* Tamanho do texto */
+    font-weight: bold;
+    z-index: 1; /* Garante que fique acima do conteúdo */
+}
+
+.projetos-card:hover .projetos-overlay {
+    opacity: 1; /* Torna visível ao passar o mouse */
+}
+
+.projetos-overlay-link {
+    color: white; /* Cor do texto do link */
+    text-decoration: none; /* Remove sublinhado */
+}
+
+.projetos-overlay-link:hover {
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse sobre o texto "Ver Projeto" */
+}
+
+.caixa-textos-projeto {
+  padding: 1.5rem;
+}
+
+.projetos-imagem {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.paragrafo-projetos {
+  color: rba(226, 232, 240, 0.8);
+  line-height: 1.25rem;
+}
+
+.info-projetos {
+  margin-bottom: 5px;
+}
+
+.contatos {
+  padding: 6rem 2rem;
+  height: 100vh;
+}
+
+
+
+.contatos-titulo {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+.formulario-contato {
+  max-width: 600px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  padding: 2rem;
+  border: 1px solid var(--vidro) ;
+  border-radius: 16px;
+}
+
+
+
+.campo-form {
+  width: 100%;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  color: var(--claro);
+  border: 1px solid var(--vidro);
+  outline: none;
+}
+
+.campo-form:focus {
+  border-color: var(--secundaria);
+  box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+}
+
+.grupo-form {
+  margin-bottom: 1.5rem;
+}
+
+.botao-form {
+  color: var(--claro);
+  background: linear-gradient( 90deg,        
+    #c39a58,       
+    #fff3d5,        
+    #c39a58   );
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #000;
+    font-weight: bold;
+    width: 100%;
+    transition: all 0.5 ease;
+}
+
+.botao-form:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+}
+
+.particulas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.5;
+  --cor-dourada-transparente: rgba(255, 215, 0, 0.15); 
+  
+  background: 
+    /* O primeiro círculo dourado */
+    radial-gradient(circle at 10% 20%, var(--cor-dourada-transparente) 0%, transparent 20%),
+    
+    /* O segundo círculo (em outro lugar para ser visível) */
+    radial-gradient(circle at 80% 40%, var(--cor-dourada-transparente) 0%, transparent 20%),
+    
+    /* Cor de fundo sólida */
+    #0a0a0a;
+}
+
+@keyframes flutuar {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.final {
+  /* Seu gradiente original */
+  background: linear-gradient(135deg, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+  
+  /* 1. Torna o background maior que o elemento para permitir movimento */
+  background-size: 400% 400%; 
+  
+  /* 2. Aplica a animação */
+  animation: brilho-metalico 10s ease infinite; /* 10s para a duração, 'ease' para suavidade */
+
+  /* Estilos opcionais para a div */
+  width: 100%;
+  height: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-size: 1.4rem;
+  text-shadow: 2px 2px 5px rgba(255,255,255,1);
+  max-width: 100%;
+}
+
+/* 3. Define a animação (@keyframes) */
+@keyframes brilho-metalico {
+  0% {
+    /* Posição inicial do background (canto superior esquerdo) */
+    background-position: 0% 0%; 
+  }
+  50% {
+    /* Posição intermediária (canto inferior direito) */
+    background-position: 100% 100%; 
+  }
+  100% {
+    /* Retorna à posição inicial para um loop suave */
+    background-position: 0% 0%;
+  }
+}
+
+
+.direitos{
+  font-weight: bold;
+}
+
+.projetos-slider-container {
+    position: relative;
+}
+
+/* Esconde os botões por padrão em telas grandes */
+.slider-btn {
+    display: none;
+}
+
+/* 1. Esconde o botão do menu em telas grandes (desktop) por padrão */
+.mobile-menu-icon {
+    display: none; 
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  /* Garante que a transição seja suave */
+  will-change: opacity, transform;
+}
+
+/*
+  2. Estado final (visível) que será adicionado via JavaScript.
+  Quando o elemento tiver esta classe, ele se tornará visível em sua posição original.
+*/
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/*
+  3. Adiciona um pequeno atraso (delay) para cada elemento,
+  criando um efeito escalonado e mais dinâmico.
+*/
+.projetos-card:nth-child(1) { transition-delay: 200ms; }
+.projetos-card:nth-child(2) { transition-delay: 400ms; }
+.projetos-card:nth-child(3) { transition-delay: 600ms; }
+.projetos-card:nth-child(4) { transition-delay: 800ms; }
+
+.skills-icons i:nth-child(1) { transition-delay: 200ms; }
+.skills-icons i:nth-child(2) { transition-delay: 300ms; }
+.skills-icons i:nth-child(3) { transition-delay: 400ms; }
+.skills-icons i:nth-child(4) { transition-delay: 500ms; }
+.skills-icons i:nth-child(5) { transition-delay: 600ms; }
+
+
+.particulas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Garante que fique atrás de todo o conteúdo */
+  overflow: hidden; /* Esconde qualquer partícula que saia da tela */
+  pointer-events: none; /* Garante que não interfira com cliques */
+  background-color: transparent; /* A cor de fundo principal já está no body */
+}
+
+/*
+  Cria um pseudoelemento para as estrelas principais.
+  Este será um "campo" de estrelas que se move e brilha.
+*/
+.particulas::before {
+  content: '';
+  position: absolute;
+  top: -50%; /* Começa acima da tela */
+  left: -50%; /* Começa à esquerda da tela */
+  width: 200%; /* Largura maior que a tela para cobrir movimentos */
+  height: 200%; /* Altura maior que a tela para cobrir movimentos */
+  background:
+    /* Múltiplos gradientes radiais para simular estrelas */
+    radial-gradient(circle at 15% 25%, rgba(255, 255, 255, 0.1) 1px, transparent 1.5px),
+    radial-gradient(circle at 85% 70%, rgba(255, 255, 255, 0.15) 1px, transparent 1.5px),
+    radial-gradient(circle at 40% 90%, rgba(255, 255, 255, 0.08) 1px, transparent 1.5px),
+    radial-gradient(circle at 70% 10%, rgba(255, 255, 255, 0.12) 1px, transparent 1.5px),
+    radial-gradient(circle at 5% 60%, rgba(255, 255, 255, 0.05) 1px, transparent 1.5px),
+    radial-gradient(circle at 95% 30%, rgba(255, 255, 255, 0.1) 1px, transparent 1.5px),
+    radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.13) 1px, transparent 1.5px),
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.07) 1px, transparent 1.5px);
+  background-size: 50px 50px; /* Tamanho das "células" de estrelas */
+  animation: moveStars 60s linear infinite, twinkleStars 4s ease-in-out infinite alternate;
+  will-change: background-position, opacity;
+}
+
+/* Animação para mover o campo de estrelas lentamente */
+@keyframes moveStars {
+  from { background-position: 0 0; }
+  to { background-position: 500px 500px; } /* Movimento diagonal */
+}
+
+/* Animação para fazer as estrelas piscarem/brilharem */
+@keyframes twinkleStars {
+  0% { opacity: 0.7; }
+  50% { opacity: 1; }
+  100% { opacity: 0.7; }
+}
+
+/* Opcional: Adicione algumas "estrelas maiores" ou "nebulosas" */
+.particulas::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(circle at 20% 70%, rgba(212, 175, 55, 0.05) 0%, transparent 20%),
+    radial-gradient(circle at 80% 30%, rgba(212, 175, 55, 0.07) 0%, transparent 25%),
+    radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.03) 0%, transparent 15%);
+  background-size: 150% 150%; /* Tamanho maior para as "manchas" */
+  animation: moveNebula 80s linear infinite alternate, fadeNebula 8s ease-in-out infinite;
+  will-change: background-position, opacity;
+}
+
+/* Animação para mover as "nebulosas" lentamente */
+@keyframes moveNebula {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 100% 100%; }
+}
+
+/* Animação para fazer as "nebulosas" aparecerem e desaparecerem */
+@keyframes fadeNebula {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 0.9; }
+}
+
+/*
+  Remova o background radial direto da classe .particulas se você o tinha,
+  já que agora as estrelas e nebulosas estão nos pseudoelementos.
+  Certifique-se que o background do <body> seja o #0a0a0a ou similar.
+*/
+body {
+    background-color: var(--escuro); /* ou #0a0a0a */
+    color: var(--claro);
+}
+
+
+
+@media screen and (max-width: 1290px) {
+  h1 {
+    margin-top: 5rem;
+  }
+
+  .impact {
+    margin-top: 1rem;
+    margin: 0;
+  }
+
+  .cabecalho-sub-titulo {
+    margin-top: 10px;
+  }
+
+  .button {
+    margin-top: 50px;
+  }
+}
+
+@media screen and (max-width: 884px) {
+  h1 {
+    margin-top: 1rem;
+    margin-bottom: 5rem;
+  }
+   .navegacao {
+        display: flex;
+        justify-content: flex-end; /* Alinha o ícone à direita */
+        align-items: center;
+        padding: 1rem;
+    }
+
+    /* Esconde o menu de links original */
+    .menu {
+        display: none; /* O menu de links some */
+        
+        /* Estilo para quando o menu for aberto */
+        position: absolute;
+        top: 100%; /* Aparece logo abaixo da barra de navegação */
+        left: 0;
+        width: 100%;
+        background-color: rgba(11, 11, 11, 0.95); /* Fundo um pouco mais sólido */
+        flex-direction: column; /* Organiza os links verticalmente */
+        text-align: center;
+        gap: 0;
+    }
+
+    /* Estilo dos links dentro do menu mobile */
+    .menu li {
+        width: 100%;
+        border-top: 1px solid var(--vidro);
+    }
+    
+    .menu li a {
+        padding: 1.5rem 0;
+        display: block; /* Faz o link ocupar toda a largura */
+    }
+
+    /* Classe que o JavaScript vai adicionar para MOSTRAR o menu */
+    .menu.active {
+        display: flex; /* O menu reaparece quando a classe 'active' é adicionada */
+    }
+
+    /* Mostra o botão do menu (ícone hambúrguer) */
+    .mobile-menu-icon {
+        display: block; /* O botão aparece */
+        background: none;
+        border: none;
+        color: var(--claro);
+        font-size: 2rem; /* Tamanho do ícone */
+        cursor: pointer;
+    }
+
+  .impact {
+    margin-top: 2rem;
+    margin-bottom: 5px;
+  }
+
+  .cabecalho-sub-titulo {
+    margin-top: 10px;
+    font-size: 2rem;
+  }
+
+  .button {
+    margin-top: 100px;
+  }
+
+  .cabecalho-sub-js{
+    font-size: 1.8rem;
+  }
+
+  .projetos-caixas {
+    max-width: 600px;
+    gap: 3rem;
+  }
+
+  .contatos {
+    height: 90vh;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  h1 {
+    margin-top: 6rem;
+    font-size: 2.5rem;
+  }
+  .foto-perfil {
+    height: 150px;
+    width: 150px;
+  }
+
+  .cabecalho-sub-titulo {
+    font-size: 1.2rem;
+  }
+
+  .cabecalho-sub-js {
+    font-size: 1rem;
+  }
+  
+  .impact{
+    font-size: 1.5rem;
+  }
+  #sobre {
+    padding-top: 150px;
+  }
+
+  .projetos {
+    padding: 0;
+  }
+
+  .projetos-caixas {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  .contatos {
+    height: 100vh;
+  }
+}
+
+
+
+
+
+
