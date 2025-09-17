@@ -1,85 +1,82 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 :root {
-     --primaria: #D4AF37;   /* Dourado Clássico: para títulos, botões e destaques. */
-    --secundaria: #F0E68C;  /* Dourado Claro (Khaki): para hovers e detalhes sutis. */
-    --escuro: #121212;     /* Quase Preto: cor de fundo principal, suave para os olhos. */
-    --maisescuro: #0A0A0A; /* Preto Profundo: para o rodapé ou header, criando contraste. */
-    --claro: #EAEAEA;     /* Branco Suave: cor principal do texto e parágrafos. */
-    --vidro: rgba(255, 255, 255, 0.05);
+  --primaria: #d4af37; /* Dourado Clássico: para títulos, botões e destaques. */
+  --secundaria: #f0e68c; /* Dourado Claro (Khaki): para hovers e detalhes sutis. */
+  --escuro: #121212; /* Quase Preto: cor de fundo principal, suave para os olhos. */
+  --maisescuro: #0a0a0a; /* Preto Profundo: para o rodapé ou header, criando contraste. */
+  --claro: #eaeaea; /* Branco Suave: cor principal do texto e parágrafos. */
+  --vidro: rgba(255, 255, 255, 0.05);
 }
 
-body{
-    background-color: var(--escuro);
-    color: var(--claro);
+body {
+  background-color: var(--escuro);
+  color: var(--claro);
 }
 
 .navegacao {
-    top: 0;
-    position: fixed;
-    background-color: rgba(11, 11, 11, 0.8);
-    width: 100%;
-    z-index: 100;
-    padding: 1.5rem;
+  top: 0;
+  position: fixed;
+  background-color: rgba(11, 11, 11, 0.8);
+  width: 100%;
+  z-index: 100;
+  padding: 1.5rem;
 }
 
-
-
 .menu {
-    display: flex;
-    list-style: none;
-    gap: 3rem;
-    justify-content: center;
+  display: flex;
+  list-style: none;
+  gap: 3rem;
+  justify-content: center;
 }
 
 .menu-link {
-    text-decoration: none;
-    color: var(--claro);
-    font-weight: 500;
-    position: relative;
-    padding: 0.5rem 0;
+  text-decoration: none;
+  color: var(--claro);
+  font-weight: 500;
+  position: relative;
+  padding: 0.5rem 0;
 }
 
-.menu-link::after{
-    content: '';
-    height: 2px;
-    width: 0;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    background: linear-gradient(90deg, var(--primaria), var(--secundaria));
-    transition: width 0.45s ease;
-
+.menu-link::after {
+  content: "";
+  height: 2px;
+  width: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(90deg, var(--primaria), var(--secundaria));
+  transition: width 0.45s ease;
 }
 
 .menu-link:hover::after {
-    width: 100%;
+  width: 100%;
 }
 
 .cabecalho {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-.foto-perfil{
-    width: 200px;
-    height: 200px;
-    box-shadow: 0 0 15px 5px rgba(212, 175, 55, 0.2);
-    border-radius: 50%;
-    border: 4px solid var(--vidro);
-    animation: flutuar 5s ease-in-out infinite;
+.foto-perfil {
+  width: 200px;
+  height: 200px;
+  box-shadow: 0 0 15px 5px rgba(212, 175, 55, 0.2);
+  border-radius: 50%;
+  border: 4px solid var(--vidro);
+  animation: flutuar 5s ease-in-out infinite;
 }
 
 .impact {
@@ -94,12 +91,13 @@ h1 {
   margin-top: 1.5rem;
   font-size: 1rem;
   margin-bottom: 2rem;
-   /* 1. O Gradiente Dourado */
+  /* 1. O Gradiente Dourado */
   background: linear-gradient(
-    90deg,          /* Direção do gradiente */
-    #c39a58,        /* Tom dourado mais escuro */
-    #fff3d5,        /* Tom de brilho claro (quase branco) */
-    #c39a58         /* Repete o tom escuro para um loop suave */
+    90deg,
+    /* Direção do gradiente */ #c39a58,
+    /* Tom dourado mais escuro */ #fff3d5,
+    /* Tom de brilho claro (quase branco) */ #c39a58
+      /* Repete o tom escuro para um loop suave */
   );
 
   /* 2. Faz o fundo ser 2x maior que o texto para ter espaço para se mover */
@@ -111,46 +109,51 @@ h1 {
 
   /* 4. Deixa a cor do texto transparente para que o fundo apareça */
   /* Para navegadores mais antigos e WebKit */
-  -webkit-text-fill-color: transparent; 
+  -webkit-text-fill-color: transparent;
   color: transparent; /* Para navegadores modernos */
 
   /* 5. Aplica a animação */
   animation: brilho-dourado 3s linear infinite;
 
   /* Estilos opcionais para deixar o texto mais bonito */
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Segoe UI", sans-serif;
   font-size: 3.5rem;
   text-align: center;
 }
 
-
 .cabecalho-sub-titulo {
   font-size: 3rem;
   color: var(--claro);
-
 }
 
-.cabecalho-sub-js{
+.cabecalho-sub-js {
   font-size: 2.5rem;
-  margin-top: 10px
+  margin-top: 10px;
 }
 
-.typing-effect{
-  background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
-  
+.typing-effect {
+  background: linear-gradient(
+    to right,
+    #bf953f,
+    #fcf6ba,
+    #b38728,
+    #fbf5b7,
+    #aa771c
+  );
+
   /* 2. Recorta o fundo para o formato do texto */
   -webkit-background-clip: text;
   -moz-background-clip: text;
   background-clip: text;
-  
+
   /* 3. Deixa a cor do texto transparente para que o fundo apareça */
   color: transparent;
 
   /* Opcional: Adiciona uma sombra para dar mais profundidade */
-  text-shadow: 2px 2px 3px rgba(0,0,0,0.2);
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
 }
 
-/* From Uiverse.io by imtausef */ 
+/* From Uiverse.io by imtausef */
 .button {
   margin-top: 5rem;
   cursor: pointer;
@@ -160,9 +163,7 @@ h1 {
   padding: 2px;
   background: radial-gradient(circle 80px at 80% -10%, #ffffff, #181b1b);
   position: relative;
-  transition:
-    background 0.3s,
-    transform 0.3s;
+  transition: background 0.3s, transform 0.3s;
 }
 
 .button:hover {
@@ -196,13 +197,11 @@ h1 {
   left: 0;
   background: radial-gradient(
     circle 60px at 0% 100%,
-     rgba(212, 175, 55, 0.2),
+    rgba(212, 175, 55, 0.2),
     transparent
   );
-  box-shadow: -10px 10px 30px ;
-  transition:
-    background 0.3s,
-    box-shadow 0.3s;
+  box-shadow: -10px 10px 30px;
+  transition: background 0.3s, box-shadow 0.3s;
 }
 
 .button:hover .blob1 {
@@ -234,7 +233,7 @@ h1 {
   border-radius: 14px;
   background: radial-gradient(
     circle 60px at 0% 100%,
-     rgba(212, 175, 55, 0.2),
+    rgba(212, 175, 55, 0.2),
     transparent
   );
   position: absolute;
@@ -246,23 +245,24 @@ h1 {
 }
 
 .sobre {
-  padding:  6rem 2rem;
+  padding: 6rem 2rem;
   height: 100vh;
 }
 
-.sobre-titulo{
+.sobre-titulo {
   margin-top: 4rem;
   font-size: 3rem;
   text-align: center;
   margin-bottom: 30px;
   margin-top: 1.5rem;
   font-size: 1rem;
-   /* 1. O Gradiente Dourado */
+  /* 1. O Gradiente Dourado */
   background: linear-gradient(
-    90deg,          /* Direção do gradiente */
-    #c39a58,        /* Tom dourado mais escuro */
-    #fff3d5,        /* Tom de brilho claro (quase branco) */
-    #c39a58         /* Repete o tom escuro para um loop suave */
+    90deg,
+    /* Direção do gradiente */ #c39a58,
+    /* Tom dourado mais escuro */ #fff3d5,
+    /* Tom de brilho claro (quase branco) */ #c39a58
+      /* Repete o tom escuro para um loop suave */
   );
 
   /* 2. Faz o fundo ser 2x maior que o texto para ter espaço para se mover */
@@ -274,19 +274,19 @@ h1 {
 
   /* 4. Deixa a cor do texto transparente para que o fundo apareça */
   /* Para navegadores mais antigos e WebKit */
-  -webkit-text-fill-color: transparent; 
+  -webkit-text-fill-color: transparent;
   color: transparent; /* Para navegadores modernos */
 
   /* 5. Aplica a animação */
   animation: brilho-dourado 3s linear infinite;
 
   /* Estilos opcionais para deixar o texto mais bonito */
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Segoe UI", sans-serif;
   font-size: 3.5rem;
   text-align: center;
 }
 
-.sobre-caixa{
+.sobre-caixa {
   padding: 2rem;
   max-width: 800px;
   margin: 0 auto;
@@ -295,8 +295,6 @@ h1 {
   backdrop-filter: blur(15px);
   background: rgba(255, 255, 255, 0.05);
 }
-
-
 
 .sobre-paragrafo {
   font-size: 1.2rem;
@@ -312,12 +310,13 @@ h1 {
 .ability {
   margin-top: 4rem;
   font-size: 1rem;
-   /* 1. O Gradiente Dourado */
+  /* 1. O Gradiente Dourado */
   background: linear-gradient(
-    90deg,          /* Direção do gradiente */
-    #c39a58,        /* Tom dourado mais escuro */
-    #fff3d5,        /* Tom de brilho claro (quase branco) */
-    #c39a58         /* Repete o tom escuro para um loop suave */
+    90deg,
+    /* Direção do gradiente */ #c39a58,
+    /* Tom dourado mais escuro */ #fff3d5,
+    /* Tom de brilho claro (quase branco) */ #c39a58
+      /* Repete o tom escuro para um loop suave */
   );
 
   /* 2. Faz o fundo ser 2x maior que o texto para ter espaço para se mover */
@@ -329,17 +328,16 @@ h1 {
 
   /* 4. Deixa a cor do texto transparente para que o fundo apareça */
   /* Para navegadores mais antigos e WebKit */
-  -webkit-text-fill-color: transparent; 
+  -webkit-text-fill-color: transparent;
   color: transparent; /* Para navegadores modernos */
 
   /* 5. Aplica a animação */
   animation: brilho-dourado 3s linear infinite;
 
   /* Estilos opcionais para deixar o texto mais bonito */
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Segoe UI", sans-serif;
   font-size: 2rem;
   text-align: center;
-
 }
 
 @keyframes brilho-dourado {
@@ -354,44 +352,55 @@ h1 {
 }
 
 .skills-icons {
-    font-size: 3rem;
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-top: 1.5rem;
-    
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
 }
 .skills-icons i {
-    transition: color 0.3s, transform 0.3s;
-    cursor: pointer;
-    background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
-  
+  transition: color 0.3s, transform 0.3s;
+  cursor: pointer;
+  background: linear-gradient(
+    to right,
+    #bf953f,
+    #fcf6ba,
+    #b38728,
+    #fbf5b7,
+    #aa771c
+  );
+
   /* 2. Recorta o fundo para o formato do texto */
   -webkit-background-clip: text;
   -moz-background-clip: text;
   background-clip: text;
-  
+
   /* 3. Deixa a cor do texto transparente para que o fundo apareça */
- 
 
   /* Opcional: Adiciona uma sombra para dar mais profundidade */
-  text-shadow: 2px 2px 3px rgba(0,0,0,0.2);
-   
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
 }
 .skills-icons i:hover {
-    background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
-  
+  background: linear-gradient(
+    to right,
+    #bf953f,
+    #fcf6ba,
+    #b38728,
+    #fbf5b7,
+    #aa771c
+  );
+
   /* 2. Recorta o fundo para o formato do texto */
   -webkit-background-clip: text;
   -moz-background-clip: text;
   background-clip: text;
-  
+
   /* 3. Deixa a cor do texto transparente para que o fundo apareça */
   color: transparent;
 
   /* Opcional: Adiciona uma sombra para dar mais profundidade */
-  text-shadow: 2px 2px 3px rgba(0,0,0,0.2);
-    transform: scale(1.2);
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+  transform: scale(1.2);
 }
 
 .projetos {
@@ -405,10 +414,11 @@ h1 {
   margin-bottom: 50px;
   /* 1. O Gradiente Dourado */
   background: linear-gradient(
-    90deg,          /* Direção do gradiente */
-    #c39a58,        /* Tom dourado mais escuro */
-    #fff3d5,        /* Tom de brilho claro (quase branco) */
-    #c39a58         /* Repete o tom escuro para um loop suave */
+    90deg,
+    /* Direção do gradiente */ #c39a58,
+    /* Tom dourado mais escuro */ #fff3d5,
+    /* Tom de brilho claro (quase branco) */ #c39a58
+      /* Repete o tom escuro para um loop suave */
   );
 
   /* 2. Faz o fundo ser 2x maior que o texto para ter espaço para se mover */
@@ -420,19 +430,17 @@ h1 {
 
   /* 4. Deixa a cor do texto transparente para que o fundo apareça */
   /* Para navegadores mais antigos e WebKit */
-  -webkit-text-fill-color: transparent; 
+  -webkit-text-fill-color: transparent;
   color: transparent; /* Para navegadores modernos */
 
   /* 5. Aplica a animação */
   animation: brilho-dourado 3s linear infinite;
 
   /* Estilos opcionais para deixar o texto mais bonito */
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Segoe UI", sans-serif;
   font-size: 2.5rem;
   text-align: center;
 }
-
-
 
 .projetos-caixas {
   display: grid;
@@ -443,7 +451,7 @@ h1 {
 }
 
 .projetos-card {
-  background: rgba(255,255,255,0.05);
+  background: rgba(255, 255, 255, 0.05);
   border-radius: 16px;
   backdrop-filter: blur(5px);
   border: 1px solid var(--vidro);
@@ -454,40 +462,40 @@ h1 {
 }
 
 .projetos-card:hover {
-   box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
-   transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+  transform: translateY(-10px) scale(1.03);
 }
 
 .projetos-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Fundo semi-transparente escuro */
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0; /* Começa invisível */
-    transition: opacity 0.3s ease; /* Transição suave para o efeito */
-    text-decoration: none; /* Remove sublinhado do link */
-    font-size: 1.5em; /* Tamanho do texto */
-    font-weight: bold;
-    z-index: 1; /* Garante que fique acima do conteúdo */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Fundo semi-transparente escuro */
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0; /* Começa invisível */
+  transition: opacity 0.3s ease; /* Transição suave para o efeito */
+  text-decoration: none; /* Remove sublinhado do link */
+  font-size: 1.5em; /* Tamanho do texto */
+  font-weight: bold;
+  z-index: 1; /* Garante que fique acima do conteúdo */
 }
 
 .projetos-card:hover .projetos-overlay {
-    opacity: 1; /* Torna visível ao passar o mouse */
+  opacity: 1; /* Torna visível ao passar o mouse */
 }
 
 .projetos-overlay-link {
-    color: white; /* Cor do texto do link */
-    text-decoration: none; /* Remove sublinhado */
+  color: white; /* Cor do texto do link */
+  text-decoration: none; /* Remove sublinhado */
 }
 
 .projetos-overlay-link:hover {
-    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse sobre o texto "Ver Projeto" */
+  text-decoration: underline; /* Adiciona sublinhado ao passar o mouse sobre o texto "Ver Projeto" */
 }
 
 .caixa-textos-projeto {
@@ -508,10 +516,11 @@ h1 {
 .link-mobile-projeto {
   display: none;
   background: linear-gradient(
-    90deg,          /* Direção do gradiente */
-    #c39a58,        /* Tom dourado mais escuro */
-    #fff3d5,        /* Tom de brilho claro (quase branco) */
-    #c39a58         /* Repete o tom escuro para um loop suave */
+    90deg,
+    /* Direção do gradiente */ #c39a58,
+    /* Tom dourado mais escuro */ #fff3d5,
+    /* Tom de brilho claro (quase branco) */ #c39a58
+      /* Repete o tom escuro para um loop suave */
   );
   background-size: 300% 300%;
   -webkit-background-clip: text;
@@ -523,7 +532,6 @@ h1 {
   text-decoration: underline;
   font-weight: 700;
 
-
   font-weight: bold;
   text-decoration: underline;
 }
@@ -533,9 +541,15 @@ h1 {
 }
 
 @keyframes brilhoDourado {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -545,10 +559,6 @@ h1 {
   }
 }
 
-
-
-
-
 .info-projetos {
   margin-bottom: 5px;
 }
@@ -557,8 +567,6 @@ h1 {
   padding: 6rem 2rem;
   height: 100vh;
 }
-
-
 
 .contatos-titulo {
   text-align: center;
@@ -573,11 +581,9 @@ h1 {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(5px);
   padding: 2rem;
-  border: 1px solid var(--vidro) ;
+  border: 1px solid var(--vidro);
   border-radius: 16px;
 }
-
-
 
 .campo-form {
   width: 100%;
@@ -600,18 +606,15 @@ h1 {
 
 .botao-form {
   color: var(--claro);
-  background: linear-gradient( 90deg,        
-    #c39a58,       
-    #fff3d5,        
-    #c39a58   );
-    padding: 1rem 2rem;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    color: #000;
-    font-weight: bold;
-    width: 100%;
-    transition: all 0.5 ease;
+  background: linear-gradient(90deg, #c39a58, #fff3d5, #c39a58);
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #000;
+  font-weight: bold;
+  width: 100%;
+  transition: all 0.5 ease;
 }
 
 .botao-form:hover {
@@ -627,21 +630,26 @@ h1 {
   height: 100%;
   z-index: -1;
   opacity: 0.5;
-  --cor-dourada-transparente: rgba(255, 215, 0, 0.15); 
-  
+  --cor-dourada-transparente: rgba(255, 215, 0, 0.15);
+
   background: 
-    /* O primeiro círculo dourado */
-    radial-gradient(circle at 10% 20%, var(--cor-dourada-transparente) 0%, transparent 20%),
-    
+    /* O primeiro círculo dourado */ radial-gradient(
+      circle at 10% 20%,
+      var(--cor-dourada-transparente) 0%,
+      transparent 20%
+    ),
     /* O segundo círculo (em outro lugar para ser visível) */
-    radial-gradient(circle at 80% 40%, var(--cor-dourada-transparente) 0%, transparent 20%),
-    
-    /* Cor de fundo sólida */
-    #0a0a0a;
+      radial-gradient(
+        circle at 80% 40%,
+        var(--cor-dourada-transparente) 0%,
+        transparent 20%
+      ),
+    /* Cor de fundo sólida */ #0a0a0a;
 }
 
 @keyframes flutuar {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
 
@@ -652,11 +660,18 @@ h1 {
 
 .final {
   /* Seu gradiente original */
-  background: linear-gradient(135deg, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
-  
+  background: linear-gradient(
+    135deg,
+    #bf953f,
+    #fcf6ba,
+    #b38728,
+    #fbf5b7,
+    #aa771c
+  );
+
   /* 1. Torna o background maior que o elemento para permitir movimento */
-  background-size: 400% 400%; 
-  
+  background-size: 400% 400%;
+
   /* 2. Aplica a animação */
   animation: brilho-metalico 10s ease infinite; /* 10s para a duração, 'ease' para suavidade */
 
@@ -668,7 +683,7 @@ h1 {
   align-items: center;
   color: black;
   font-size: 1.4rem;
-  text-shadow: 2px 2px 5px rgba(255,255,255,1);
+  text-shadow: 2px 2px 5px rgba(255, 255, 255, 1);
   max-width: 100%;
 }
 
@@ -676,11 +691,11 @@ h1 {
 @keyframes brilho-metalico {
   0% {
     /* Posição inicial do background (canto superior esquerdo) */
-    background-position: 0% 0%; 
+    background-position: 0% 0%;
   }
   50% {
     /* Posição intermediária (canto inferior direito) */
-    background-position: 100% 100%; 
+    background-position: 100% 100%;
   }
   100% {
     /* Retorna à posição inicial para um loop suave */
@@ -688,23 +703,22 @@ h1 {
   }
 }
 
-
-.direitos{
+.direitos {
   font-weight: bold;
 }
 
 .projetos-slider-container {
-    position: relative;
+  position: relative;
 }
 
 /* Esconde os botões por padrão em telas grandes */
 .slider-btn {
-    display: none;
+  display: none;
 }
 
 /* 1. Esconde o botão do menu em telas grandes (desktop) por padrão */
 .mobile-menu-icon {
-    display: none; 
+  display: none;
 }
 
 .hidden {
@@ -728,17 +742,34 @@ h1 {
   3. Adiciona um pequeno atraso (delay) para cada elemento,
   criando um efeito escalonado e mais dinâmico.
 */
-.projetos-card:nth-child(1) { transition-delay: 200ms; }
-.projetos-card:nth-child(2) { transition-delay: 400ms; }
-.projetos-card:nth-child(3) { transition-delay: 600ms; }
-.projetos-card:nth-child(4) { transition-delay: 800ms; }
+.projetos-card:nth-child(1) {
+  transition-delay: 200ms;
+}
+.projetos-card:nth-child(2) {
+  transition-delay: 400ms;
+}
+.projetos-card:nth-child(3) {
+  transition-delay: 600ms;
+}
+.projetos-card:nth-child(4) {
+  transition-delay: 800ms;
+}
 
-.skills-icons i:nth-child(1) { transition-delay: 200ms; }
-.skills-icons i:nth-child(2) { transition-delay: 300ms; }
-.skills-icons i:nth-child(3) { transition-delay: 400ms; }
-.skills-icons i:nth-child(4) { transition-delay: 500ms; }
-.skills-icons i:nth-child(5) { transition-delay: 600ms; }
-
+.skills-icons i:nth-child(1) {
+  transition-delay: 200ms;
+}
+.skills-icons i:nth-child(2) {
+  transition-delay: 300ms;
+}
+.skills-icons i:nth-child(3) {
+  transition-delay: 400ms;
+}
+.skills-icons i:nth-child(4) {
+  transition-delay: 500ms;
+}
+.skills-icons i:nth-child(5) {
+  transition-delay: 600ms;
+}
 
 .particulas {
   position: fixed;
@@ -757,67 +788,130 @@ h1 {
   Este será um "campo" de estrelas que se move e brilha.
 */
 .particulas::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -50%; /* Começa acima da tela */
   left: -50%; /* Começa à esquerda da tela */
   width: 200%; /* Largura maior que a tela para cobrir movimentos */
   height: 200%; /* Altura maior que a tela para cobrir movimentos */
   background:
-    /* Múltiplos gradientes radiais para simular estrelas */
-    radial-gradient(circle at 15% 25%, rgba(255, 255, 255, 0.1) 1px, transparent 1.5px),
-    radial-gradient(circle at 85% 70%, rgba(255, 255, 255, 0.15) 1px, transparent 1.5px),
-    radial-gradient(circle at 40% 90%, rgba(255, 255, 255, 0.08) 1px, transparent 1.5px),
-    radial-gradient(circle at 70% 10%, rgba(255, 255, 255, 0.12) 1px, transparent 1.5px),
-    radial-gradient(circle at 5% 60%, rgba(255, 255, 255, 0.05) 1px, transparent 1.5px),
-    radial-gradient(circle at 95% 30%, rgba(255, 255, 255, 0.1) 1px, transparent 1.5px),
-    radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.13) 1px, transparent 1.5px),
-    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.07) 1px, transparent 1.5px);
+    /* Múltiplos gradientes radiais para simular estrelas */ radial-gradient(
+      circle at 15% 25%,
+      rgba(255, 255, 255, 0.1) 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle at 85% 70%,
+      rgba(255, 255, 255, 0.15) 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle at 40% 90%,
+      rgba(255, 255, 255, 0.08) 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle at 70% 10%,
+      rgba(255, 255, 255, 0.12) 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle at 5% 60%,
+      rgba(255, 255, 255, 0.05) 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle at 95% 30%,
+      rgba(255, 255, 255, 0.1) 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle at 20% 80%,
+      rgba(255, 255, 255, 0.13) 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(255, 255, 255, 0.07) 1px,
+      transparent 1.5px
+    );
   background-size: 50px 50px; /* Tamanho das "células" de estrelas */
-  animation: moveStars 60s linear infinite, twinkleStars 4s ease-in-out infinite alternate;
+  animation: moveStars 60s linear infinite,
+    twinkleStars 4s ease-in-out infinite alternate;
   will-change: background-position, opacity;
 }
 
 /* Animação para mover o campo de estrelas lentamente */
 @keyframes moveStars {
-  from { background-position: 0 0; }
-  to { background-position: 500px 500px; } /* Movimento diagonal */
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 500px 500px;
+  } /* Movimento diagonal */
 }
 
 /* Animação para fazer as estrelas piscarem/brilharem */
 @keyframes twinkleStars {
-  0% { opacity: 0.7; }
-  50% { opacity: 1; }
-  100% { opacity: 0.7; }
+  0% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.7;
+  }
 }
 
 /* Opcional: Adicione algumas "estrelas maiores" ou "nebulosas" */
 .particulas::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background:
-    radial-gradient(circle at 20% 70%, rgba(212, 175, 55, 0.05) 0%, transparent 20%),
-    radial-gradient(circle at 80% 30%, rgba(212, 175, 55, 0.07) 0%, transparent 25%),
-    radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.03) 0%, transparent 15%);
+  background: radial-gradient(
+      circle at 20% 70%,
+      rgba(212, 175, 55, 0.05) 0%,
+      transparent 20%
+    ),
+    radial-gradient(
+      circle at 80% 30%,
+      rgba(212, 175, 55, 0.07) 0%,
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(212, 175, 55, 0.03) 0%,
+      transparent 15%
+    );
   background-size: 150% 150%; /* Tamanho maior para as "manchas" */
-  animation: moveNebula 80s linear infinite alternate, fadeNebula 8s ease-in-out infinite;
+  animation: moveNebula 80s linear infinite alternate,
+    fadeNebula 8s ease-in-out infinite;
   will-change: background-position, opacity;
 }
 
 /* Animação para mover as "nebulosas" lentamente */
 @keyframes moveNebula {
-  0% { background-position: 0% 0%; }
-  100% { background-position: 100% 100%; }
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
 }
 
 /* Animação para fazer as "nebulosas" aparecerem e desaparecerem */
 @keyframes fadeNebula {
-  0%, 100% { opacity: 0.6; }
-  50% { opacity: 0.9; }
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 0.9;
+  }
 }
 
 /*
@@ -826,11 +920,9 @@ h1 {
   Certifique-se que o background do <body> seja o #0a0a0a ou similar.
 */
 body {
-    background-color: var(--escuro); /* ou #0a0a0a */
-    color: var(--claro);
+  background-color: var(--escuro); /* ou #0a0a0a */
+  color: var(--claro);
 }
-
-
 
 @media screen and (max-width: 1290px) {
   h1 {
@@ -856,53 +948,53 @@ body {
     margin-top: 1rem;
     margin-bottom: 5rem;
   }
-   .navegacao {
-        display: flex;
-        justify-content: flex-end; /* Alinha o ícone à direita */
-        align-items: center;
-        padding: 1rem;
-    }
+  .navegacao {
+    display: flex;
+    justify-content: flex-end; /* Alinha o ícone à direita */
+    align-items: center;
+    padding: 1rem;
+  }
 
-    /* Esconde o menu de links original */
-    .menu {
-        display: none; /* O menu de links some */
-        
-        /* Estilo para quando o menu for aberto */
-        position: absolute;
-        top: 100%; /* Aparece logo abaixo da barra de navegação */
-        left: 0;
-        width: 100%;
-        background-color: rgba(11, 11, 11, 0.95); /* Fundo um pouco mais sólido */
-        flex-direction: column; /* Organiza os links verticalmente */
-        text-align: center;
-        gap: 0;
-    }
+  /* Esconde o menu de links original */
+  .menu {
+    display: none; /* O menu de links some */
 
-    /* Estilo dos links dentro do menu mobile */
-    .menu li {
-        width: 100%;
-        border-top: 1px solid var(--vidro);
-    }
-    
-    .menu li a {
-        padding: 1.5rem 0;
-        display: block; /* Faz o link ocupar toda a largura */
-    }
+    /* Estilo para quando o menu for aberto */
+    position: absolute;
+    top: 100%; /* Aparece logo abaixo da barra de navegação */
+    left: 0;
+    width: 100%;
+    background-color: rgba(11, 11, 11, 0.95); /* Fundo um pouco mais sólido */
+    flex-direction: column; /* Organiza os links verticalmente */
+    text-align: center;
+    gap: 0;
+  }
 
-    /* Classe que o JavaScript vai adicionar para MOSTRAR o menu */
-    .menu.active {
-        display: flex; /* O menu reaparece quando a classe 'active' é adicionada */
-    }
+  /* Estilo dos links dentro do menu mobile */
+  .menu li {
+    width: 100%;
+    border-top: 1px solid var(--vidro);
+  }
 
-    /* Mostra o botão do menu (ícone hambúrguer) */
-    .mobile-menu-icon {
-        display: block; /* O botão aparece */
-        background: none;
-        border: none;
-        color: var(--claro);
-        font-size: 2rem; /* Tamanho do ícone */
-        cursor: pointer;
-    }
+  .menu li a {
+    padding: 1.5rem 0;
+    display: block; /* Faz o link ocupar toda a largura */
+  }
+
+  /* Classe que o JavaScript vai adicionar para MOSTRAR o menu */
+  .menu.active {
+    display: flex; /* O menu reaparece quando a classe 'active' é adicionada */
+  }
+
+  /* Mostra o botão do menu (ícone hambúrguer) */
+  .mobile-menu-icon {
+    display: block; /* O botão aparece */
+    background: none;
+    border: none;
+    color: var(--claro);
+    font-size: 2rem; /* Tamanho do ícone */
+    cursor: pointer;
+  }
 
   .impact {
     margin-top: 2rem;
@@ -918,7 +1010,7 @@ body {
     margin-top: 100px;
   }
 
-  .cabecalho-sub-js{
+  .cabecalho-sub-js {
     font-size: 1.8rem;
   }
 
@@ -944,8 +1036,6 @@ body {
     box-shadow: none;
   }
 
-
-
   .contatos {
     height: 90vh;
   }
@@ -968,8 +1058,8 @@ body {
   .cabecalho-sub-js {
     font-size: 0.9rem;
   }
-  
-  .impact{
+
+  .impact {
     font-size: 1.5rem;
   }
   #sobre {
@@ -988,9 +1078,3 @@ body {
     height: 100vh;
   }
 }
-
-
-
-
-
-
